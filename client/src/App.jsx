@@ -12,12 +12,12 @@ const App = () => {
         </Link>
         <Link
           to='/create-post'
-          className='font-medium bg-[#ff8606] text-white px-4 py-2 rounded-lg'
+          className='text-sm font-medium bg-[#ff8606] text-white px-3 py-2 rounded-lg'
         >
           Create
         </Link>
       </header>
-      <main className='sm:p-8 px-4 py-8 w-full bg-[#dbe0f2] min-h-[calc(100vh-70px)]'>
+      <main className='sm:p-8 px-4 py-8 w-full bg-[#eaedf8] min-h-[calc(100vh-70px)]'>
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/create-post' element={<CreatePost />} />
