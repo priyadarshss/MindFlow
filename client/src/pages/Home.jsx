@@ -54,14 +54,12 @@ const Home = () => {
 
     setSearchTimeout(
       setTimeout(() => {
-        const searchResults = allPosts.filter(
+        const searchResult = allPosts.filter(
           (item) =>
             item.name.toLowerCase().includes(searchText.toLowerCase()) ||
-            item.prompt.toLowerCase(),
-          includes(searchText.toLowerCase())
+            item.prompt.toLowerCase().includes(searchText.toLowerCase())
         )
-
-        setSearchedResults(searchResults)
+        setSearchedResults(searchResult)
       }, 500)
     )
   }
