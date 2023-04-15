@@ -87,7 +87,7 @@ const CreatePost = () => {
         <h1 className='font-extrabold text-[#222328] text-[32px] flex justify-center items-center'>
           Create
         </h1>
-        <p className='mt-2 text-[#666e75] text-[16px] flex justify-center items-center'>
+        <p className='mt-2 text-[#666e75] text-[16px] flex justify-center items-center text-center'>
           Create a compilation of creative and visually impressive pictures
           through DALL·E and share them with the community
         </p>
@@ -114,26 +114,27 @@ const CreatePost = () => {
               isSurpriseMe
               handleSurpriseMe={handleSurpriseMe}
             />
-
-            <div className='relative bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-1g focus:ring-blue-500 focus:border-blue-500 w-64 p-3 h-64 flex justify-center items-center rounded-lg'>
-              {form.photo ? (
-                <img
-                  src={form.photo}
-                  alt='photo'
-                  className='w-full h-full object-contain'
-                />
-              ) : (
-                <img
-                  src={preview}
-                  alt='preview'
-                  className='w-9/12 h-9/12 object-contain opacity-40 '
-                />
-              )}
-              {generatingImg && (
-                <div className='absolute inset-0 z-0 flex justify-center items-center bg-[#34373aaa] rounded-lg'>
-                  <Loader />
-                </div>
-              )}
+            <div className='flex justify-center items-center'>
+              <div className='relative bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-1g focus:ring-blue-500 focus:border-blue-500 w-64 p-3 h-64 flex justify-center items-center rounded-lg'>
+                {form.photo ? (
+                  <img
+                    src={form.photo}
+                    alt='photo'
+                    className='w-full h-full object-contain'
+                  />
+                ) : (
+                  <img
+                    src={preview}
+                    alt='preview'
+                    className='w-9/12 h-9/12 object-contain opacity-40 '
+                  />
+                )}
+                {generatingImg && (
+                  <div className='absolute inset-0 z-0 flex justify-center items-center bg-[#34373aaa] rounded-lg'>
+                    <Loader />
+                  </div>
+                )}
+              </div>
             </div>
           </div>
           <div className='mt-5 flex gap-5'>
@@ -146,7 +147,7 @@ const CreatePost = () => {
             </button>
           </div>
           <div className='mt-10'>
-            <p className='text-[#666e75] text-[14px]'>
+            <p className='text-[#666e75] text-[14px] text-center'>
               Once you have generated the image, you can share it with others in
               the community
             </p>

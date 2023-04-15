@@ -66,15 +66,16 @@ const Home = () => {
 
   return (
     <section className='max-w-7xl mx-auto'>
-      {console.log(allPosts)}
-      <div>
-        <h1 className='font-extrabold text-[#222328] text-[32px]'>
-          The Community Showcase
-        </h1>
-        <p className='mt-2 text-[#666e75] text-[16px]'>
-          Explore a compilation of creative and visually impressive pictures
-          produced by DALL·E
-        </p>
+      <div className='flex justify-center items-center'>
+        <div>
+          <h1 className='font-extrabold text-[#222328] text-[32px] flex justify-center items-center text-center'>
+            The Community Showcase
+          </h1>
+          <p className='flex justify-center items-center mt-2 text-[#666e75] text-[16px] text-center'>
+            Explore a compilation of creative and visually impressive pictures
+            produced by DALL·E
+          </p>
+        </div>
       </div>
       <div className='mt-16'>
         <FormField
