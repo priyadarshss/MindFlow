@@ -18,6 +18,7 @@ const Home = () => {
   const [searchText, setSearchText] = useState('')
   const [searchedResults, setSearchedResults] = useState(null)
   const [searchTimeout, setSearchTimeout] = useState(null)
+  const [posts, setPosts] = useState(false)
 
   const fetchPosts = async () => {
     setLoading(true)
@@ -36,6 +37,7 @@ const Home = () => {
       if (response.ok) {
         const result = await response.json()
         setAllPosts(result.data.reverse())
+        setPosts(true)
       }
     } catch (err) {
       alert(err)
@@ -45,8 +47,16 @@ const Home = () => {
   }
 
   useEffect(() => {
-    fetchPosts()
-  }, [])
+    if (!posts) {
+      const intervalId = setInterval(() => {
+        fetchPosts()
+      }, 2000)
+
+      return () => {
+        clearInterval(intervalId)
+      }
+    }
+  }, [posts, fetchPosts])
 
   const handleSearchChange = (e) => {
     clearTimeout(searchTimeout)
@@ -106,9 +116,9 @@ const Home = () => {
                   data={searchedResults}
                   title='No search results found'
                 />
-              ) : (
+              ) : !searchText && posts ? (
                 <RenderCards data={allPosts} title='No posts found' />
-              )}
+              ): null}
             </div>
           </>
         )}
